@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './post/post.model.ts';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  addPost(title: HTMLInputElement, link: HTMLInputElement): boolean {
-    console.log(`Adding post title: ${title.value} and link: ${link.value}`);
+  addPost(title: HTMLInputElement, source: HTMLInputElement): boolean {
+    console.log(`Adding post title: ${title.value} and link: ${source.value}`);
     return false;
   }
 }

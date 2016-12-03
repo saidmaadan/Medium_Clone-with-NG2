@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from './post.model.ts';
 
 @Component({
   selector: 'app-post',
@@ -9,23 +10,20 @@ import { Component, OnInit } from '@angular/core';
   }
 })
 export class PostComponent implements OnInit {
-  thumbs: number;
-  title: string;
-  link: string;
+  post: Post;
 
   constructor() {
-    this.title = "Post 1";
-    this.link = 'http://maadan.me';
-    this.thumbs = 5;
+    this.post = new Post("Post 1", 'http://maadan.me', 10);
+
   }
 
-  thumbUp(){
-    this.thumbs += 1;
+  thumbUp(): boolean{
+    this.post.thumbUp();
     return false;
   }
 
   thumbDown(){
-    this.thumbs -= 1;
+    this.post.thumbDown();
     return false;
   }
 
