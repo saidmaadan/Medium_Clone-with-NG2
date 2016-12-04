@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Post } from './post.model.ts';
 
 @Component({
@@ -10,7 +10,7 @@ import { Post } from './post.model.ts';
   }
 })
 export class PostComponent implements OnInit {
-  post: Post;
+  @Input() post: Post;
 
   constructor() {
     this.post = new Post("Post 1", 'http://maadan.me', 10);
