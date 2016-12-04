@@ -16,7 +16,7 @@ export class AppComponent {
       new Post('Dev Konnect', 'http://dkonnect.com', 5),
       new Post('Jobs and Company Directory App', 'http://job-inbox.com', 6),
       new Post('Web Development firm', 'http://inventivelabs.co', 9),
-    ]
+    ];
   }
   addPost(title: HTMLInputElement, source: HTMLInputElement): boolean {
     console.log(`Adding post title: ${title.value} and link: ${source.value}`);
@@ -24,5 +24,9 @@ export class AppComponent {
     title.value = '';
     source.value = '';
     return false;
+  }
+
+  sortedPosts(): Post[] {
+    return this.posts.sort((a: Post, b: Post) => b.thumbs - a.thumbs))
   }
 }
